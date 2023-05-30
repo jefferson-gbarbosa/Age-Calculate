@@ -31,10 +31,12 @@ Users should be able to:
 - **Bonus**: See the age numbers animate to their final number when the form is submitted
 
 ### Screenshot
--Versão desktop
+- Versão desktop
+
 ![](.github/Desktop-Preview-Age-calculator-app.png)
 
--Versão mobile
+- Versão mobile
+
 ![](.github/Mobile-Preview-Frontend-Mentor-Age-calculator-app.png)
 
 ### Links
