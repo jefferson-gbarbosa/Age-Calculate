@@ -31,15 +31,16 @@ Users should be able to:
 - **Bonus**: See the age numbers animate to their final number when the form is submitted
 
 ### Screenshot
--Versão desktop
 ![](.github/Desktop-Preview-Age-calculator-app.png)
-
--Versão mobile
 ![](.github/Mobile-Preview-Frontend-Mentor-Age-calculator-app.png)
+
+![](.github/Desktop-Preview-Error-Empty.png)
+![](.github/Desktop-Preview-Error-Invalid.png)
+![](.github/Desktop-Preview-Completed.png)
 
 ### Links
 
-- Solution URL: [Link do repositório](https://github.com/jefferson-gbarbosa/Age-Calculate)
+- Solution URL: [Link do repositório no github](https://github.com/jefferson-gbarbosa/Age-Calculate)
 - Live Site URL: [Link ao vivo da solução](https://jefferson-gbarbosa.github.io/Age-Calculate)
 
 ## My process
