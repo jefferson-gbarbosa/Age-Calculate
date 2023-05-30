@@ -33,7 +33,9 @@ Users should be able to:
 ### Screenshot
 ![](.github/Desktop-Preview-Age-calculator-app.png)
 
-![](.github/Mobile-Preview-Frontend-Mentor-Age-calculator-app.png)
+<p align="center">
+   <img src=".github/Mobile-Preview-Frontend-Mentor-Age-calculator-app.png" alt="Demonstração do projeto mobile" width="100%"/>
+</p>
 
 ![](.github/Desktop-Preview-Error-Empty.png)
 ![](.github/Desktop-Preview-Error-Invalid.png)
