@@ -18,7 +18,7 @@ form.addEventListener('submit',calculateAge);
 function checkDay(){
   let erroTxt = document.querySelector('.error-text-d');
   let validator = true;
-  if(dayInput.value > 31){
+  if(dayInput.value <= 0 || dayInput.value > 31){
     dayField.classList.add('invalid');
     erroTxt.innerText = 'Must be a valid day';
     validator = false;
@@ -35,7 +35,7 @@ function checkDay(){
 function checkMonth(){
   let erroTxt = document.querySelector('.error-text-m');
   let validator = true;
-  if(monthInput.value > 12){
+  if(monthInput.value <= 0 || monthInput.value > 12){
     monthField.classList.add('invalid');
     erroTxt.innerText = 'Must be a valid month';
     validator = false;
