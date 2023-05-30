@@ -32,6 +32,8 @@ Users should be able to:
 
 ### Screenshot
 ![](.github/Desktop-Preview-Age-calculator-app.png)
+
+-Versão mobile
 ![](.github/Mobile-Preview-Frontend-Mentor-Age-calculator-app.png)
 
 ![](.github/Desktop-Preview-Error-Empty.png)
