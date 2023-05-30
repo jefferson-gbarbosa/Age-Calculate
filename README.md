@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Link do repositório no github](https://github.com/jefferson-gbarbosa/Age-Calculate)
-- Live Site URL: [Link ao vivo da solução](https://jefferson-gbarbosa.github.io/Age-Calculate)
+- Solution URL: [Link do repositório no github](https://github.com/jefferson-gbarbosa/age-calculator-app)
+- Live Site URL: [Link ao vivo da solução](https://jefferson-gbarbosa.github.io/age-calculator-app)
 
 ## My process
 
