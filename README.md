@@ -34,7 +34,7 @@ Users should be able to:
 ![](.github/Desktop-Preview-Age-calculator-app.png)
 
 <p align="center">
-   <img src=".github/Mobile-Preview-Frontend-Mentor-Age-calculator-app.png" alt="Demonstração do projeto mobile" width="100%"/>
+   <img src=".github/Mobile-Preview-Frontend-Mentor-Age-calculator-app.png" alt="Demonstração do projeto mobile"/>
 </p>
 
 ![](.github/Desktop-Preview-Error-Empty.png)
