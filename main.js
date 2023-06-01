@@ -67,6 +67,7 @@ function checkYear(){
  return validator;
 }
 
+
 function leapChecker(year){
   if(year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)){
     months[1]=29
@@ -86,7 +87,7 @@ function calculateAge(e){
   checkDay();
   checkMonth();
   checkYear();
-
+  
   dayInput.addEventListener('keyup',checkDay);
   monthInput.addEventListener('keyup',checkMonth);
   yearInput.addEventListener('keyup',checkYear);
@@ -105,19 +106,8 @@ function calculateAge(e){
     date:inputDate.getDate()
   }
 
-  // let lastDay = new Date(inputDate.getFullYear(),inputDate.getMonth() + 1,0);
-  // let lastDateDay =  lastDay.toLocaleDateString();
-  // console.log(lastDateDay)
-    
   if(checkDay() && checkMonth() && checkYear()){
-    // if(day == lastDateDay){
-    //   console.log("sim")
-    // }else{
-    //   console.log("nao")
-    // }
    
-    
-    
     leapChecker(currentYear);
   
     birthYear = currentYear - birthDetails.year;
