@@ -90,21 +90,33 @@ function calculateAge(e){
   dayInput.addEventListener('keyup',checkDay);
   monthInput.addEventListener('keyup',checkMonth);
   yearInput.addEventListener('keyup',checkYear);
+
+  let day = dayInput.value;
+  let month = monthInput.value;
+  let year = yearInput.value;
+  
+  let inputDate = new Date(`${year}-${month}-${day}`);
+  
+  let birthYear,birthMonth,birthDay;
+  
+  let birthDetails = {
+    year:inputDate.getFullYear(),
+    month:inputDate.getMonth()+1,
+    date:inputDate.getDate()
+  }
+
+  // let lastDay = new Date(inputDate.getFullYear(),inputDate.getMonth() + 1,0);
+  // let lastDateDay =  lastDay.toLocaleDateString();
+  // console.log(lastDateDay)
     
   if(checkDay() && checkMonth() && checkYear()){
-    let day = dayInput.value;
-    let month = monthInput.value;
-    let year = yearInput.value;
+    // if(day == lastDateDay){
+    //   console.log("sim")
+    // }else{
+    //   console.log("nao")
+    // }
+   
     
-    let inputDate = new Date(`${year}-${month}-${day}`);
-    
-    let birthYear,birthMonth,birthDay;
-    
-    let birthDetails = {
-      year:inputDate.getFullYear(),
-      month:inputDate.getMonth()+1,
-      date:inputDate.getDate()
-    }
     
     leapChecker(currentYear);
   
