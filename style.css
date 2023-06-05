@@ -105,8 +105,12 @@ label{
     color: var(--smokey-grey);
     margin-bottom: 5px;
 }
+#l-month,
+#l-year{
+    color: #d93025;
+}
 .invalid label{
-    color: #d93025;;
+    color: #d93025;
 }
 input{
     width: 100%;
@@ -122,11 +126,15 @@ input{
     caret-color: var(--purple);
     cursor: pointer;
 }
+#month,
+#year{
+    border: 1px solid #d93025;
+}
 input:focus{
     border-color: var(--purple);
 }
 .invalid input{
-    border: 1px solid #d93025;;
+    border: 1px solid #d93025;
 }
 .error{
     color: #d93025;

@@ -8,23 +8,51 @@ let monthInput = document.querySelector('.month');
 let yearField = document.querySelector('.year-field');
 let yearInput = document.querySelector('.year');
 
+let labelMonth = document.querySelector('.l-month');
+let labelYear = document.querySelector('.l-year');
+
 let today = new Date();
 let currentYear = today.getFullYear();
 let currentMonth = today.getMonth() + 1;
-let currentDate = today.getDate()
+let currentDate = today.getDate();
 
 form.addEventListener('submit',calculateAge);
 
 function checkDay(){
   let erroTxt = document.querySelector('.error-text-d');
   let validator = true;
-  if(dayInput.value <= 0 || dayInput.value > 31){
-    dayField.classList.add('invalid');
-    erroTxt.innerText = 'Must be a valid day';
-    validator = false;
-  }else if(dayInput.value == ''){
+
+  if(dayInput.value == ''){
     dayField.classList.add('invalid');
     erroTxt.innerText = 'This field is required';
+    validator = false;
+
+  }else if(dayInput.value < 1 || dayInput.value > 31){
+    dayField.classList.add('invalid');
+    erroTxt.innerText = 'Must be a valid day';    
+    validator = false;
+  
+  } else if ((dayInput.value == 29 || dayInput.value == 30) && monthInput.value == 2){
+    dayField.classList.add('invalid');
+
+    labelMonth.style.color = '#d93025';
+    monthInput.style.borderColor = '#d93025';
+
+    labelYear.style.color = '#d93025';
+    yearInput.style.borderColor = '#d93025';
+
+    erroTxt.innerText = 'Must be a valid day';
+    validator = false;
+
+  }else if(dayInput.value == 31 && (monthInput.value == 2 || monthInput.value == 4 || monthInput.value == 6 ||monthInput.value == 9 || monthInput.value == 11)){
+    dayField.classList.add('invalid');
+    labelMonth.setAttribute("id","l-month");
+    monthInput.setAttribute("id","month");
+   
+    labelYear.setAttribute("id","l-year");
+    yearInput.setAttribute("id","year");
+
+    erroTxt.innerText = 'Must be a valid day';
     validator = false;
   }else{
     dayField.classList.remove('invalid');
@@ -35,18 +63,24 @@ function checkDay(){
 function checkMonth(){
   let erroTxt = document.querySelector('.error-text-m');
   let validator = true;
-  if(monthInput.value <= 0 || monthInput.value > 12){
-    monthField.classList.add('invalid');
-    erroTxt.innerText = 'Must be a valid month';
-    validator = false;
-  }else if(monthInput.value == ''){
+
+  if(monthInput.value == ''){
     monthField.classList.add('invalid');
     erroTxt.innerText = 'This field is required';
     validator = false;
+  
+  }else if(monthInput.value < 1 || monthInput.value > 12){
+    monthField.classList.add('invalid');
+    erroTxt.innerText = 'Must be a valid month';
+    validator = false;
+ 
   }else{
     monthField.classList.remove('invalid');
+    labelMonth.removeAttribute("id","l-month");
+    monthInput.removeAttribute("id","month");
     validator = true;
-  }  
+
+  } 
   return validator
 }
 function checkYear(){
@@ -62,9 +96,13 @@ function checkYear(){
     validator = false;
   }else{
     yearField.classList.remove('invalid');
+    labelYear.removeAttribute("id","l-year");
+    yearInput.removeAttribute("id","year");
     validator = true;
   }
- return validator;
+  // labelYear.style.color = '#716f6f';
+  // yearInput.style.borderColor = '#dbdbdb';
+  return validator;
 }
 
 
