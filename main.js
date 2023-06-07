@@ -16,7 +16,7 @@ let currentYear = today.getFullYear();
 let currentMonth = today.getMonth() + 1;
 let currentDate = today.getDate();
 
-form.addEventListener('submit',calculateAge);
+form.addEventListener('submit',ageCalculate);
 
 function checkDay(){
   let erroTxtDay = document.querySelector('.error-text-d');
@@ -126,7 +126,7 @@ function displayResult(bYear,bMonth,bDay){
   document.getElementById('dd').textContent = bDay;
 }
 
-function calculateAge(e){
+function ageCalculate(e){
   e.preventDefault();
   checkDay();
   checkMonth();
