@@ -18,17 +18,17 @@
       <div class="fields"> 
         <div class="input-field day-field">
           <label for="day" class="l-day">Day</label>
-          <input type="text" name="day" placeholder="DD" class="day">
+          <input type="number" min="1" max="31" name="day" placeholder="DD" class="day">
           <small class="error error-text-d">This field is required</small>
         </div>
         <div class="input-field month-field">
           <label for="month" class="l-month"> Month</label>
-          <input type="text" name="month" placeholder="MM" class="month" >
+          <input type="number" min="1" max="12" name="month" placeholder="MM" class="month" >
           <small class="error error-text-m">This field is required</small>
         </div>
         <div class="input-field year-field">
           <label for="year" class="l-year">Year</label>
-          <input type="text" name="year" placeholder="YYYY" class="year" >
+          <input type="number" name="year" placeholder="YYYY" class="year"  >
           <small class="error error-text-y">This field is required</small>
         </div>
       </div>

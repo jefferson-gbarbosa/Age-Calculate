@@ -31,18 +31,6 @@ function checkDay(){
     dayField.classList.add('invalid');
     erroTxt.innerText = 'Must be a valid day';    
     validator = false;
-  
-  } else if ((dayInput.value == 29 || dayInput.value == 30) && monthInput.value == 2){
-    dayField.classList.add('invalid');
-
-    labelMonth.style.color = '#d93025';
-    monthInput.style.borderColor = '#d93025';
-
-    labelYear.style.color = '#d93025';
-    yearInput.style.borderColor = '#d93025';
-
-    erroTxt.innerText = 'Must be a valid day';
-    validator = false;
 
   }else if(dayInput.value == 31 && (monthInput.value == 2 || monthInput.value == 4 || monthInput.value == 6 ||monthInput.value == 9 || monthInput.value == 11)){
     dayField.classList.add('invalid');
@@ -73,7 +61,6 @@ function checkMonth(){
     monthField.classList.add('invalid');
     erroTxt.innerText = 'Must be a valid month';
     validator = false;
- 
   }else{
     monthField.classList.remove('invalid');
     labelMonth.removeAttribute("id","l-month");
@@ -100,20 +87,39 @@ function checkYear(){
     yearInput.removeAttribute("id","year");
     validator = true;
   }
-  // labelYear.style.color = '#716f6f';
-  // yearInput.style.borderColor = '#dbdbdb';
   return validator;
 }
 
-
+function checkLeapYear(){
+  let erroTxt = document.querySelector('.error-text-d');
+  let validator = false;
+  let check = leapChecker();
+  if(monthInput.value == 2){
+    if(check){
+      validator = true;
+      dayField.classList.remove('invalid');
+        
+    }else if(dayInput.value <= 28 || dayInput.value >= 30 ){
+      validator = true;
+      dayField.classList.remove('invalid');
+    }
+    else{
+      dayField.classList.add('invalid'); 
+      erroTxt.innerText = 'Must be a valid day';
+    }
+  }else{
+    validator = true;
+  }
+  return validator
+}
 function leapChecker(year){
   if(year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)){
-    months[1]=29
+   months[1]=29
+   return new Date(year,1,29).getMonth()==1;
   }else{
     months[1]=28
   }
 }
-
 function displayResult(bYear,bMonth,bDay){
   document.getElementById('yy').textContent = bYear;
   document.getElementById('mm').textContent = bMonth;
@@ -125,7 +131,6 @@ function calculateAge(e){
   checkDay();
   checkMonth();
   checkYear();
-  
   dayInput.addEventListener('keyup',checkDay);
   monthInput.addEventListener('keyup',checkMonth);
   yearInput.addEventListener('keyup',checkYear);
@@ -133,7 +138,7 @@ function calculateAge(e){
   let day = dayInput.value;
   let month = monthInput.value;
   let year = yearInput.value;
-  
+
   let inputDate = new Date(`${year}-${month}-${day}`);
   
   let birthYear,birthMonth,birthDay;
@@ -144,10 +149,8 @@ function calculateAge(e){
     date:inputDate.getDate()
   }
 
-  if(checkDay() && checkMonth() && checkYear()){
-   
+  if(checkDay() && checkMonth() && checkYear() && checkLeapYear()){
     leapChecker(currentYear);
-  
     birthYear = currentYear - birthDetails.year;
 
     if(currentMonth >= birthDetails.month){
