@@ -18,6 +18,8 @@ let currentDate = today.getDate();
 
 form.addEventListener('submit',ageCalculate);
 
+// day check function
+// if it is within 01 and 31 days and also the months that are 30 and 31 days
 function checkDay(){
   let erroTxtDay = document.querySelector('.error-text-d');
   let validator = true;
@@ -48,6 +50,8 @@ function checkDay(){
   }
   return validator
 }
+//month check function
+// check if the month is between January and December (1 to 12)
 function checkMonth(){
   let erroTxtMonth = document.querySelector('.error-text-m');
   let validator = true;
@@ -70,6 +74,8 @@ function checkMonth(){
   } 
   return validator
 }
+// year check function
+//check that the year entered is not the same as the current or future year
 function checkYear(){
   let erroTxtYear = document.querySelector('.error-text-y');
   let validator = true;
@@ -89,7 +95,7 @@ function checkYear(){
   }
   return validator;
 }
-
+// function to allow calculations of years that have a month of 29 days
 function checkLeapYear(){
   let erroTxtDay = document.querySelector('.error-text-d');
   let validator = false;
@@ -112,6 +118,7 @@ function checkLeapYear(){
   }
   return validator
 }
+// check if the year is a leap year
 function leapChecker(year){
   if(year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)){
    months[1]=29
@@ -120,12 +127,13 @@ function leapChecker(year){
     months[1]=28
   }
 }
+// function display
 function displayResult(bYear,bMonth,bDay){
   document.getElementById('yy').textContent = bYear;
   document.getElementById('mm').textContent = bMonth;
   document.getElementById('dd').textContent = bDay;
 }
-
+// age calculate
 function ageCalculate(e){
   e.preventDefault();
   checkDay();
