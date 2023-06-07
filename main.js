@@ -19,17 +19,17 @@ let currentDate = today.getDate();
 form.addEventListener('submit',calculateAge);
 
 function checkDay(){
-  let erroTxt = document.querySelector('.error-text-d');
+  let erroTxtDay = document.querySelector('.error-text-d');
   let validator = true;
 
   if(dayInput.value == ''){
     dayField.classList.add('invalid');
-    erroTxt.innerText = 'This field is required';
+    erroTxtDay.innerText = 'This field is required';
     validator = false;
 
   }else if(dayInput.value < 1 || dayInput.value > 31){
     dayField.classList.add('invalid');
-    erroTxt.innerText = 'Must be a valid day';    
+    erroTxtDay.innerText = 'Must be a valid day';    
     validator = false;
 
   }else if(dayInput.value == 31 && (monthInput.value == 2 || monthInput.value == 4 || monthInput.value == 6 ||monthInput.value == 9 || monthInput.value == 11)){
@@ -40,7 +40,7 @@ function checkDay(){
     labelYear.setAttribute("id","l-year");
     yearInput.setAttribute("id","year");
 
-    erroTxt.innerText = 'Must be a valid day';
+    erroTxtDay.innerText = 'Must be a valid day';
     validator = false;
   }else{
     dayField.classList.remove('invalid');
@@ -49,17 +49,17 @@ function checkDay(){
   return validator
 }
 function checkMonth(){
-  let erroTxt = document.querySelector('.error-text-m');
+  let erroTxtMonth = document.querySelector('.error-text-m');
   let validator = true;
 
   if(monthInput.value == ''){
     monthField.classList.add('invalid');
-    erroTxt.innerText = 'This field is required';
+    erroTxtMonth.innerText = 'This field is required';
     validator = false;
   
   }else if(monthInput.value < 1 || monthInput.value > 12){
     monthField.classList.add('invalid');
-    erroTxt.innerText = 'Must be a valid month';
+    erroTxtMonth.innerText = 'Must be a valid month';
     validator = false;
   }else{
     monthField.classList.remove('invalid');
@@ -71,15 +71,15 @@ function checkMonth(){
   return validator
 }
 function checkYear(){
-  let erroTxt = document.querySelector('.error-text-y');
+  let erroTxtYear = document.querySelector('.error-text-y');
   let validator = true;
   if(yearInput.value > currentYear || yearInput.value == currentYear){
     yearField.classList.add('invalid');
-    erroTxt.innerText = 'Must be in the past';
+    erroTxtYear .innerText = 'Must be in the past';
     validator = false;
   }else if(yearInput.value == ""){
     yearField.classList.add('invalid');
-    erroTxt.innerText = 'This field is required';
+    erroTxtYear .innerText = 'This field is required';
     validator = false;
   }else{
     yearField.classList.remove('invalid');
@@ -91,7 +91,7 @@ function checkYear(){
 }
 
 function checkLeapYear(){
-  let erroTxt = document.querySelector('.error-text-d');
+  let erroTxtDay = document.querySelector('.error-text-d');
   let validator = false;
   let check = leapChecker();
   if(monthInput.value == 2){
@@ -105,7 +105,7 @@ function checkLeapYear(){
     }
     else{
       dayField.classList.add('invalid'); 
-      erroTxt.innerText = 'Must be a valid day';
+      erroTxtDay.innerText = 'Must be a valid day';
     }
   }else{
     validator = true;
