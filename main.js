@@ -93,9 +93,9 @@ function checkYear(){
 function checkLeapYear(){
   let erroTxtDay = document.querySelector('.error-text-d');
   let validator = false;
-  let check = leapChecker();
+  let validationLeapYear = leapChecker();
   if(monthInput.value == 2){
-    if(check){
+    if(validationLeapYear){
       validator = true;
       dayField.classList.remove('invalid');
         
